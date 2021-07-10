@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.min.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <form id="form-main" class="form active">
+    <div class="form__inner">
+      <div class="form__info">
+        <h4 class="form__title">Info</h4>
+        <div class="form__group">
+          <label for="email">Enter your email address</label>
+          <input class="form__control" data-input="email" type="email" name="email"
+            placeholder="team@checkforpatent.com">
+        </div>
+        <div class="form__cart">
+          <div class="form__product">
+            <div class="form__product-header">
+              <h4 class="form__product-title">Product <span class="form__product-number">1</span></h4>
+            </div>
+            <div class="form__group">
+              <label>Enter main keyword for the product</label>
+              <input class="form__control" type="text" placeholder="for example, sylicon wine cup">
+            </div>
+            <div class="form__group">
+              <label>Enter link to the similar product as a reference</label>
+              <input class="form__control" type="text" placeholder="https://...">
+            </div>
+          </div>
+        </div>
+        <a class="form__btn form__btn--add" data-btn="add">Add more products</a>
+        <span class="form__info-text">We offer discount up to 36% for multiple checks</span>
+      </div>
+    </div>
+    <div class="form__footer">
+      <button type="submit" class="form__btn form__btn--bg" data-submit>Submit and Pay <span
+          class="form__price">0</span>USD</button>
+      <small class="form__secure">Secure payment with Stripe</small>
+    </div>
+  </form>
+  <div id="form-choice" class="form" action="/">
+    <div class="form__info">
+      <h4 class="form__title">Adding more products</h4>
+      <span class="form__subtitle">The more items you check, the better the price.</span>
+      <div class="form__choice">
+        <div class="form__group" data-choice data-price="16" data-cnt="5">
+          <div class="form__choice-action">
+            <input id="input_1" type="radio" name="product">
+            <label for="input_1"></label>
+          </div>
+          <div class="form__choice-info">
+            <span class="form__choice-price">5 products for 80 usd / 16$ for each</span>
+            <small class="form__choice-percent">You safe 36% on each patent check </small>
+          </div>
+        </div>
+        <div class="form__group" data-choice data-price="18" data-cnt="4">
+          <div class="form__choice-action">
+            <input id="input_2" type="radio" name="product">
+            <label for="input_2"></label>
+          </div>
+          <div class="form__choice-info">
+            <span class="form__choice-price">4 products for 72 usd / 18$ for each</span>
+            <small class="form__choice-percent">You safe 36% on each patent check </small>
+          </div>
+        </div>
+        <div class="form__group" data-choice data-price="20" data-cnt="3">
+          <div class="form__choice-action">
+            <input id="input_3" type="radio" name="product">
+            <label for="input_3"></label>
+          </div>
+          <div class="form__choice-info">
+            <span class="form__choice-price">3 products for 60 usd / 20$ for each</span>
+            <small class="form__choice-percent">You safe 36% on each patent check </small>
+          </div>
+        </div>
+        <div class="form__group" data-choice data-price="22" data-cnt="2">
+          <div class="form__choice-action">
+            <input id="input_4" type="radio" name="product">
+            <label for="input_4"></label>
+          </div>
+          <div class="form__choice-info">
+            <span class="form__choice-price">2 products for 44 usd / 22$ for each</span>
+            <small class="form__choice-percent">You safe 36% on each patent check </small>
+          </div>
+        </div>
+        <div class="form__group" data-choice data-price="24" data-cnt="1">
+          <div class="form__choice-action">
+            <input id="input_5" type="radio" name="product">
+            <label for="input_5"></label>
+          </div>
+          <div class="form__choice-info">
+            <span class="form__choice-price">1 product for 24 usd</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="form__btn form__btn--bg" data-btn="continue">Continue</button>
+  </div>
+  <div id="form-succeed" class="form">
+    <div class="form__info">
+      <h4 class="form__title">Successfull payment</h4>
+      <p class="form__subtitle">
+        Your request has been accepted and will be processed within 24 working hours. We will send you a payment details
+        and all information to your email.
+      </p>
+      <img class="form__photo form__photo" src="img/succeed-icon.png" alt="card">
+    </div>
+    <button class="form__btn form__btn--bg" data-btn="back">Back</button>
+  </div>
+  <div id="form-error" class="form">
+    <div class="form__info">
+      <h4 class="form__title">Your payment failed</h4>
+      <p class="form__subtitle">
+        Sorry, but we’ve having trouble processing your payment. You have been not charged for this transaction.
+      </p>
+      <img class="form__photo form__photo--error" src="img/eror-icon.png" alt="card">
+    </div>
+    <button class="form__btn form__btn--bg form__btn--error" data-btn="again">Try to pay again</button>
+  </div>
+  <script src="js/script.min.js"></script>
+</body>
+
+</html>
