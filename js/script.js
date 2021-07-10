@@ -183,7 +183,6 @@ formMain.addEventListener('submit', function (e) {
       return new Promise((res, rej) => {
         btnSubmit.innerHTML = typeBtn.load
         setTimeout(() => {
-          rej()
           res(data)
         }, 1000)
       })
