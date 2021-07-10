@@ -12,6 +12,7 @@ const formSucceed = document.querySelector('#form-succeed')
 const formError = document.querySelector('#form-error')
 const btnSubmit = document.querySelector('[data-submit]')
 const inputEmail = document.querySelector('[data-input="email"]')
+const formSecure = document.querySelector('.form__secure');
 const mainUrl = window.location.href;
 function removeGreenClass() {
   for (let i = 0; i < textPercentItems.length; i++) {
@@ -26,6 +27,7 @@ document.body.addEventListener('click', function (e) {
   if (target.getAttribute('data-btn') === 'add') {
     formMain.classList.remove('active')
     formChoice.classList.add('active')
+    formSecure.classList.add('notActive')
   }
 
   if (choiceBtn) {

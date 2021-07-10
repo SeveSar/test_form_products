@@ -768,6 +768,10 @@ body {
   background-position: left top;
 }
 
+.form__secure.notActive {
+  display: none;
+}
+
 .text-center {
   text-align: center;
   margin-top: 9px;
@@ -987,9 +991,7 @@ body {
     padding: 35px 15px 35px 15px;
   }
 
-  #form-choice .form__btn,
-  #form-succeed .form__btn,
-  #form-error .form__btn {
+  #form-choice .form__btn {
     margin-top: 15px;
   }
 }
