@@ -976,6 +976,22 @@ body {
   .form__footer {
     padding-right: 10px;
   }
+
+  .form__choice .form__group {
+    padding: 8px 10px 8px 10px;
+  }
+
+  #form-choice,
+  #form-succeed,
+  #form-error {
+    padding: 35px 15px 35px 15px;
+  }
+
+  #form-choice .form__btn,
+  #form-succeed .form__btn,
+  #form-error .form__btn {
+    margin-top: 15px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
