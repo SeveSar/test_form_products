@@ -12,6 +12,7 @@ const formSucceed = document.querySelector('#form-succeed')
 const formError = document.querySelector('#form-error')
 const btnSubmit = document.querySelector('[data-submit]')
 const inputEmail = document.querySelector('[data-input="email"]')
+const mainUrl = window.location.href;
 function removeGreenClass() {
   for (let i = 0; i < textPercentItems.length; i++) {
     textPercentItems[i].classList.remove('green')
@@ -64,12 +65,13 @@ document.body.addEventListener('click', function (e) {
   if (target.dataset.btn === 'back') {
     formSucceed.classList.remove('active')
     formMain.classList.add('active')
+    setMainUrl()
   }
 
   if (target.dataset.btn === 'again') {
     formError.classList.remove('active')
     formMain.classList.add('active')
-    window.history.pushState({}, '', '')
+    setMainUrl()
   }
 })
 // cart logic
@@ -139,10 +141,7 @@ const cart = {
   },
 }
 // cart.renderProducts()
-const typeBtn = {
-  load: `<img class="load" src="img/load-icon.svg" alt="snip">`,
-  text: `Submit and Pay <span class="form__price">0</span>USD`,
-}
+
 function formValid() {
   if (inputEmail.value.length === 0) {
     inputEmail.style.borderColor = 'red'
@@ -154,23 +153,37 @@ function formValid() {
   }
 }
 function addQueryToUrl(type) {
-  const url = type === 'success' ? '/paymentsuccess' : '/paymenterror'
+  console.log(window.location.href)
+  const url = type === 'success' ? `${mainUrl}/paymentsuccess` : `${mainUrl}/paymenterror`
   if (history.pushState) {
     window.history.pushState('', '', `${url}`)
   } else {
     document.location.href = `${url}`
   }
 }
+function setMainUrl() {
+  if (history.pushState) {
+    window.history.pushState('', '', `${mainUrl}`)
+  } else {
+    document.location.href = `${mainUrl}`
+  }
+}
 
+const typeBtn = {
+  load: `<img class="load" src="img/load-icon.svg" alt="snip">`,
+  text: `Submit and Pay <span class="form__price">0</span>USD`,
+}
 formMain.addEventListener('submit', function (e) {
   e.preventDefault()
   if (formValid()) {
     const data = new FormData(formMain)
     data.append('cart', JSON.stringify(cart.products))
+    btnSubmit.innerHTML = ""
     const loadData = () => {
       return new Promise((res, rej) => {
         btnSubmit.innerHTML = typeBtn.load
         setTimeout(() => {
+          rej()
           res(data)
         }, 1000)
       })
