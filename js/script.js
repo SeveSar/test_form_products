@@ -190,9 +190,9 @@ formMain.addEventListener('submit', function (e) {
     loadData()
       .then((data) => {
         if (history.pushState) {
-          window.history.pushState('', '', '/paymentsuccess')
+          window.history.pushState('', '', 'paymentsuccess')
         } else {
-          document.location.href = '/paymenterror'
+          document.location.href = 'paymenterror'
         }
         addQueryToUrl('success')
         console.log(...data)
