@@ -467,14 +467,13 @@ progress {
 }
 
 html {
-  padding: 10px;
+  padding: 0 10px;
 }
 
 body {
   background: #E5E5E5;
   min-height: 100vh;
   font-family: 'Gilroy';
-  padding: 15px;
   position: relative;
 }
 
